@@ -1,0 +1,96 @@
+{
+  "name": "@ethercast/backend-model",
+  "version": "0.0.0",
+  "description": "model for the ethercast api",
+  "keywords": [],
+  "main": "dist/lib/backend-model.js",
+  "typings": "dist/types/backend-model.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Moody Salem <moody.salem@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc --module commonjs && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:prod": "npm run test -- --coverage --no-cache",
+    "deploy-docs": "ts-node tools/gh-pages-publish",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "commit": "git-cz",
+    "prepare": "npm run build"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    },
+    "validate-commit-msg": {
+      "types": "conventional-commit-types",
+      "helpMessage": "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
+    }
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "collectCoverage": true,
+    "mapCoverage": true
+  },
+  "peerDependencies": {
+    "joi": "^13.1.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.0",
+    "@types/joi": "^13.0.5",
+    "@types/node": "^9.3.0",
+    "@types/url-regex": "^4.0.0",
+    "colors": "^1.1.2",
+    "commitizen": "^2.9.6",
+    "coveralls": "^3.0.0",
+    "cross-env": "^5.0.1",
+    "cz-conventional-changelog": "^2.0.0",
+    "husky": "^0.14.0",
+    "jest": "^22.0.2",
+    "joi": "^13.1.2",
+    "lodash.camelcase": "^4.3.0",
+    "prettier": "^1.4.4",
+    "prompt": "^1.0.0",
+    "replace-in-file": "^3.0.0-beta.2",
+    "rimraf": "^2.6.1",
+    "semantic-release": "^12.4.1",
+    "ts-jest": "^22.0.0",
+    "ts-node": "^5.0.1",
+    "typedoc": "^0.11.0",
+    "typescript": "^2.6.2",
+    "validate-commit-msg": "^2.12.2"
+  },
+  "dependencies": {
+    "url-regex": "^4.1.1"
+  }
+}
