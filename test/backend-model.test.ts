@@ -1,4 +1,4 @@
-import { JoiSubscriptionPostRequest, Subscription, SubscriptionType } from '../src/backend-model';
+import { JoiSubscriptionPostRequest, Subscription, SubscriptionType } from '../src/index';
 
 describe('JoiSubscriptionPostRequest#validate', () => {
   function v(o: any | Partial<Subscription>) {

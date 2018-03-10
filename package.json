@@ -3,8 +3,8 @@
   "version": "0.0.2",
   "description": "model for the ethercast api",
   "keywords": [],
-  "main": "dist/lib/backend-model.js",
-  "typings": "dist/types/backend-model.d.ts",
+  "main": "dist/lib/index.js",
+  "typings": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
