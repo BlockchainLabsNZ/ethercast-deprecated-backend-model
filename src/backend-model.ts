@@ -1,6 +1,6 @@
 import * as Joi from 'joi';
 import { Schema } from 'joi';
-import urlRegex from 'url-regex';
+import * as urlRegex from 'url-regex';
 
 export enum SubscriptionStatus {
   active = 'active',
@@ -111,7 +111,7 @@ export const JoiSubscriptionPostRequest = Joi.object().keys({
     .uri({ scheme: [ 'http', 'https' ] })
     .regex(urlRegex(), 'URL regular expression')
     .required(),
-  filters: Joi.object().when(
+  filters: Joi.alternatives().when(
     'type',
     {
       is: SubscriptionType.log,

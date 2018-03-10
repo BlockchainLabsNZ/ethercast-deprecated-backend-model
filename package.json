@@ -11,7 +11,7 @@
   "author": "Moody Salem <moody.salem@gmail.com>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/ethercast/backend-model"
   },
   "license": "MIT",
   "engines": {
@@ -59,8 +59,7 @@
         "statements": 95
       }
     },
-    "collectCoverage": true,
-    "mapCoverage": true
+    "collectCoverage": true
   },
   "peerDependencies": {
     "joi": "^13.1.2"
@@ -69,7 +68,6 @@
     "@types/jest": "^22.2.0",
     "@types/joi": "^13.0.5",
     "@types/node": "^9.3.0",
-    "@types/url-regex": "^4.0.0",
     "colors": "^1.1.2",
     "commitizen": "^2.9.6",
     "coveralls": "^3.0.0",
