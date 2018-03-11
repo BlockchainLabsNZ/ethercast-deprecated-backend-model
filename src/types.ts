@@ -63,7 +63,7 @@ export interface WebhookReceipt {
   result: WebhookReceiptResult;
 }
 
-export interface SubscriptionPostRequest extends Pick<Subscription, 'name' | 'type' | 'description' | 'webhookUrl'> {
+export interface CreateSubscriptionRequest extends Pick<Subscription, 'name' | 'type' | 'description' | 'webhookUrl'> {
   filters: LogSubscriptionFilters | TransactionSubscriptionFilters;
 }
 
