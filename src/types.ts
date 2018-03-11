@@ -78,6 +78,7 @@ export interface WebhookReceipt {
 }
 
 export interface CreateApiKeyRequest {
+  name: string;
   scopes: Set<Scope>;
 }
 
