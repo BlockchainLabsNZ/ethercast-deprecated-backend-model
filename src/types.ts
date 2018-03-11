@@ -29,6 +29,7 @@ export interface Subscription {
   id: string; // uuid v4
   type: SubscriptionType;
   timestamp: number;
+  secret: string;
   user: string;
   name: string; // reasonable max length
   description?: string; // reasonable max length - longer

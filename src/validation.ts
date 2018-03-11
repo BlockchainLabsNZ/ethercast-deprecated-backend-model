@@ -68,6 +68,7 @@ export const JoiSubscription = JoiSubscriptionPostRequest.keys({
   id: Joi.string().uuid({ version: 'uuidv4' }).required(),
   timestamp: Joi.number().required(),
   user: Joi.string().required(),
+  secret: Joi.string().hex().length(64).required(),
   status: Joi.string().valid(Object.keys(SubscriptionStatus)).required(),
   subscriptionArn: Joi.string().required()
 });
