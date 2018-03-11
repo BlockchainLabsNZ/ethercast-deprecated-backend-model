@@ -931,7 +931,13 @@ img { max-width: 100%; }
 			<a href="interfaces/createapikeyrequest.html" class="tsd-kind-icon">Create<wbr>Api<wbr>Key<wbr>Request</a>
 		</li>
 		<li class=" tsd-kind-interface">
+			<a href="interfaces/createlogsubscriptionrequest.html" class="tsd-kind-icon">Create<wbr>Log<wbr>Subscription<wbr>Request</a>
+		</li>
+		<li class=" tsd-kind-interface">
 			<a href="interfaces/createsubscriptionrequest.html" class="tsd-kind-icon">Create<wbr>Subscription<wbr>Request</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="interfaces/createtransactionsubscriptionrequest.html" class="tsd-kind-icon">Create<wbr>Transaction<wbr>Subscription<wbr>Request</a>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="interfaces/logsubscription.html" class="tsd-kind-icon">Log<wbr>Subscription</a>
@@ -1027,7 +1033,9 @@ img { max-width: 100%; }
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-interface"><a href="interfaces/apikey.html" class="tsd-kind-icon">Api<wbr>Key</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/createapikeyrequest.html" class="tsd-kind-icon">Create<wbr>Api<wbr>Key<wbr>Request</a></li>
+							<li class="tsd-kind-interface"><a href="interfaces/createlogsubscriptionrequest.html" class="tsd-kind-icon">Create<wbr>Log<wbr>Subscription<wbr>Request</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/createsubscriptionrequest.html" class="tsd-kind-icon">Create<wbr>Subscription<wbr>Request</a></li>
+							<li class="tsd-kind-interface"><a href="interfaces/createtransactionsubscriptionrequest.html" class="tsd-kind-icon">Create<wbr>Transaction<wbr>Subscription<wbr>Request</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/logsubscription.html" class="tsd-kind-icon">Log<wbr>Subscription</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/subscription.html" class="tsd-kind-icon">Subscription</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/transactionsubscription.html" class="tsd-kind-icon">Transaction<wbr>Subscription</a></li>
@@ -1076,7 +1084,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Filter<wbr>Option<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/types.ts#L24">types.ts:24</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/types.ts#L24">types.ts:24</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1086,7 +1094,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Log<wbr>Subscription<wbr>Filters<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/types.ts#L25">types.ts:25</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/types.ts#L25">types.ts:25</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1101,7 +1109,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Transaction<wbr>Subscription<wbr>Filters<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/types.ts#L26">types.ts:26</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/types.ts#L26">types.ts:26</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1119,7 +1127,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Joi<wbr>Api<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectSchema</span><span class="tsd-signature-symbol"> =&nbsp;JoiCreateApiKeyRequest.keys({user: Joi.string().required(),secret: Joi.string().hex().length(64).required()})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/validation.ts#L82">validation.ts:82</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/validation.ts#L82">validation.ts:82</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1129,7 +1137,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Joi<wbr>Create<wbr>Api<wbr>Key<wbr>Request<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectSchema</span><span class="tsd-signature-symbol"> =&nbsp;Joi.object({scopes: Joi.array().items(JoiScope).unique().required().min(1)})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/validation.ts#L78">validation.ts:78</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/validation.ts#L78">validation.ts:78</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1139,7 +1147,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Joi<wbr>Create<wbr>Subscription<wbr>Request<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectSchema</span><span class="tsd-signature-symbol"> =&nbsp;Joi.object().keys({name: Joi.string().min(1).max(256).required(),type: Joi.string().valid(Object.keys(SubscriptionType)).required(),description: Joi.string().max(1024),webhookUrl: Joi.string().uri({ scheme: [ &#x27;http&#x27;, &#x27;https&#x27; ] }).regex(urlRegex(), &#x27;URL regular expression&#x27;).required(),filters: Joi.alternatives().when(&#x27;type&#x27;,{is: SubscriptionType.log,then: Joi.object({address: addressFilter,topic0: topicFilter,topic1: topicFilter,topic2: topicFilter,topic3: topicFilter}),otherwise: Joi.object({from: addressFilter,to: addressFilter})}).required()}).unknown(false)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/validation.ts#L40">validation.ts:40</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/validation.ts#L40">validation.ts:40</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1149,7 +1157,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Joi<wbr>Scope<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">StringSchema</span><span class="tsd-signature-symbol"> =&nbsp;Joi.string().valid(Object.values(Scope))</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/validation.ts#L76">validation.ts:76</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/validation.ts#L76">validation.ts:76</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1159,7 +1167,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Joi<wbr>Subscription<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectSchema</span><span class="tsd-signature-symbol"> =&nbsp;JoiCreateSubscriptionRequest.keys({id: Joi.string().uuid({ version: &#x27;uuidv4&#x27; }).required(),timestamp: Joi.number().required(),user: Joi.string().required(),secret: Joi.string().hex().length(64).required(),status: Joi.string().valid(Object.keys(SubscriptionStatus)).required(),subscriptionArn: Joi.string().required()})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/validation.ts#L67">validation.ts:67</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/validation.ts#L67">validation.ts:67</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1169,7 +1177,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Joi<wbr>Webhook<wbr>Receipt<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectSchema</span><span class="tsd-signature-symbol"> =&nbsp;Joi.object({id: Joi.string().uuid({ version: &#x27;uuidv4&#x27; }).required(),subscriptionId: Joi.string().uuid({ version: &#x27;uuidv4&#x27; }).required(),url: Joi.string().uri({ scheme: [ &#x27;https&#x27;, &#x27;http&#x27; ] }).required(),timestamp: Joi.number().required(),result: JoiWebhookReceiptResult.required()})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/validation.ts#L11">validation.ts:11</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/validation.ts#L11">validation.ts:11</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1179,7 +1187,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Joi<wbr>Webhook<wbr>Receipt<wbr>Result<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ObjectSchema</span><span class="tsd-signature-symbol"> =&nbsp;Joi.object({success: Joi.boolean().required(),statusCode: Joi.number().required()})</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/validation.ts#L6">validation.ts:6</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/validation.ts#L6">validation.ts:6</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1189,7 +1197,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">address<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">StringSchema</span><span class="tsd-signature-symbol"> =&nbsp;Joi.string().regex(/^0x[0-9a-fA-F]{40}$/).lowercase()</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/validation.ts#L19">validation.ts:19</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/validation.ts#L19">validation.ts:19</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1199,7 +1207,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">address<wbr>Filter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AlternativesSchema</span><span class="tsd-signature-symbol"> =&nbsp;filterOption(address)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/validation.ts#L37">validation.ts:37</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/validation.ts#L37">validation.ts:37</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1209,7 +1217,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">topic<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">StringSchema</span><span class="tsd-signature-symbol"> =&nbsp;Joi.string().regex(/^0x[0-9a-fA-F]{64}$/).lowercase()</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/validation.ts#L20">validation.ts:20</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/validation.ts#L20">validation.ts:20</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1219,7 +1227,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">topic<wbr>Filter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AlternativesSchema</span><span class="tsd-signature-symbol"> =&nbsp;filterOption(topic)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/validation.ts#L36">validation.ts:36</a></li>
+						<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/validation.ts#L36">validation.ts:36</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1236,7 +1244,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/6b0c51a/src/validation.ts#L25">validation.ts:25</a></li>
+								<li>Defined in <a href="https://github.com/Ethercast/backend-model/blob/97a17e1/src/validation.ts#L25">validation.ts:25</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

@@ -48,6 +48,20 @@ export interface TransactionSubscription extends Subscription {
   filters: TransactionSubscriptionFilters;
 }
 
+export interface CreateSubscriptionRequest extends Pick<Subscription, 'name' | 'description' | 'webhookUrl'> {
+  filters: LogSubscriptionFilters | TransactionSubscriptionFilters;
+}
+
+export interface CreateTransactionSubscriptionRequest extends CreateSubscriptionRequest {
+  type: SubscriptionType.transaction,
+  filters: TransactionSubscriptionFilters
+}
+
+export interface CreateLogSubscriptionRequest extends CreateSubscriptionRequest {
+  type: SubscriptionType.log,
+  filters: LogSubscriptionFilters
+}
+
 export interface WebhookReceiptResult {
   statusCode: number;
   success: boolean;
@@ -61,10 +75,6 @@ export interface WebhookReceipt {
   url: string;
   timestamp: number;
   result: WebhookReceiptResult;
-}
-
-export interface CreateSubscriptionRequest extends Pick<Subscription, 'name' | 'type' | 'description' | 'webhookUrl'> {
-  filters: LogSubscriptionFilters | TransactionSubscriptionFilters;
 }
 
 export interface CreateApiKeyRequest {
