@@ -73,7 +73,9 @@ export const JoiSubscription = JoiCreateSubscriptionRequest.keys({
   subscriptionArn: Joi.string().required()
 });
 
-export const JoiScope = Joi.string().valid(Object.values(Scope));
+export const JoiScope = Joi.string().valid(
+  Object.keys(Scope).map((k) => Scope[ k as any ])
+);
 
 export const JoiCreateApiKeyRequest = Joi.object({
   scopes: Joi.array().items(JoiScope).unique().required().min(1)
