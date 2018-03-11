@@ -66,3 +66,21 @@ export interface WebhookReceipt {
 export interface SubscriptionPostRequest extends Pick<Subscription, 'name' | 'type' | 'description' | 'webhookUrl'> {
   filters: LogSubscriptionFilters | TransactionSubscriptionFilters;
 }
+
+export interface CreateApiKeyRequest {
+  scopes: Set<Scope>;
+}
+
+export interface ApiKey extends CreateApiKeyRequest {
+  user: string;
+  secret: string;
+}
+
+export enum Scope {
+  READ_SUBSCRIPTION = 'subscription:read',
+  LIST_SUBSCRIPTIONS = 'subscription:list',
+  CREATE_SUBSCRIPTION = 'subscription:create',
+  DEACTIVATE_SUBSCRIPTION = 'subscription:deactivate',
+  CREATE_API_KEY = 'apiKey:create',
+  DEACTIVATE_API_KEY = 'apiKey:deactivate'
+}

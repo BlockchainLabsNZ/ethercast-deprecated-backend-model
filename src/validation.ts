@@ -1,7 +1,7 @@
 import * as Joi from 'joi';
 import { Schema } from 'joi';
 import * as urlRegex from 'url-regex';
-import { SubscriptionStatus, SubscriptionType } from './types';
+import { CreateApiKeyRequest, Scope, SubscriptionStatus, SubscriptionType } from './types';
 
 export const JoiWebhookReceiptResult = Joi.object({
   success: Joi.boolean().required(),
@@ -37,7 +37,7 @@ const topicFilter = filterOption(topic);
 const addressFilter = filterOption(address);
 
 
-export const JoiSubscriptionPostRequest = Joi.object().keys({
+export const JoiCreateSubscriptionRequest = Joi.object().keys({
   name: Joi.string().min(1).max(256).required(),
   type: Joi.string().valid(Object.keys(SubscriptionType)).required(),
   description: Joi.string().max(1024),
@@ -64,11 +64,22 @@ export const JoiSubscriptionPostRequest = Joi.object().keys({
   ).required()
 }).unknown(false);
 
-export const JoiSubscription = JoiSubscriptionPostRequest.keys({
+export const JoiSubscription = JoiCreateSubscriptionRequest.keys({
   id: Joi.string().uuid({ version: 'uuidv4' }).required(),
   timestamp: Joi.number().required(),
   user: Joi.string().required(),
   secret: Joi.string().hex().length(64).required(),
   status: Joi.string().valid(Object.keys(SubscriptionStatus)).required(),
   subscriptionArn: Joi.string().required()
+});
+
+export const JoiScope = Joi.string().valid(Object.values(Scope));
+
+export const JoiCreateApiKeyRequest = Joi.object({
+  scopes: Joi.array().items(JoiScope).unique().required().min(1)
+});
+
+export const JoiApiKey = JoiCreateApiKeyRequest.keys({
+  user: Joi.string().required(),
+  secret: Joi.string().hex().length(64).required()
 });

@@ -1,12 +1,12 @@
-import { JoiSubscriptionPostRequest, Subscription, SubscriptionType } from '../src';
+import { JoiCreateSubscriptionRequest, Subscription, SubscriptionType } from '../src';
 
-describe('JoiSubscriptionPostRequest#validate', () => {
+describe('JoiCreateSubscriptionRequest#validate', () => {
   function v(o: any | Partial<Subscription>) {
-    expect(JoiSubscriptionPostRequest.validate(o).error).toEqual(null);
+    expect(JoiCreateSubscriptionRequest.validate(o).error).toEqual(null);
   }
 
   function iv(o: any | Partial<Subscription>) {
-    expect(JoiSubscriptionPostRequest.validate(o).error).not.toEqual(null);
+    expect(JoiCreateSubscriptionRequest.validate(o).error).not.toEqual(null);
   }
 
   it('filters invalid requests', () => {
