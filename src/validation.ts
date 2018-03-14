@@ -1,7 +1,7 @@
 import * as Joi from 'joi';
 import { Schema } from 'joi';
 import * as urlRegex from 'url-regex';
-import { CreateApiKeyRequest, Scope, SubscriptionStatus, SubscriptionType } from './types';
+import { Scope, SubscriptionStatus, SubscriptionType } from './types';
 
 export const JoiWebhookReceiptResult = Joi.object({
   success: Joi.boolean().required(),
@@ -36,6 +36,18 @@ function filterOption(item: Schema) {
 const topicFilter = filterOption(topic);
 const addressFilter = filterOption(address);
 
+export const JoiLogFilter = Joi.object({
+  address: addressFilter,
+  topic0: topicFilter,
+  topic1: topicFilter,
+  topic2: topicFilter,
+  topic3: topicFilter
+});
+
+export const JoiTransactionFilter = Joi.object({
+  from: addressFilter,
+  to: addressFilter
+});
 
 export const JoiCreateSubscriptionRequest = Joi.object().keys({
   name: Joi.string().min(1).max(256).required(),
@@ -49,17 +61,8 @@ export const JoiCreateSubscriptionRequest = Joi.object().keys({
     'type',
     {
       is: SubscriptionType.log,
-      then: Joi.object({
-        address: addressFilter,
-        topic0: topicFilter,
-        topic1: topicFilter,
-        topic2: topicFilter,
-        topic3: topicFilter
-      }),
-      otherwise: Joi.object({
-        from: addressFilter,
-        to: addressFilter
-      })
+      then: JoiLogFilter,
+      otherwise: JoiTransactionFilter
     }
   ).required()
 }).unknown(false);
