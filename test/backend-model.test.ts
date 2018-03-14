@@ -135,6 +135,36 @@ describe('JoiCreateSubscriptionRequest#validate', () => {
         topic0: '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
       }
     });
+
+    iv({
+      name: 'moody test',
+      type: SubscriptionType.transaction,
+      description: 'abc',
+      webhookUrl: 'https://google.com',
+      filters: {
+        methodSignature: [ '0x3d7d3f5h' ]
+      }
+    });
+
+    iv({
+      name: 'moody test',
+      type: SubscriptionType.transaction,
+      description: 'abc',
+      webhookUrl: 'https://google.com',
+      filters: {
+        methodSignature: [ '0x3d7d3' ]
+      }
+    });
+
+    iv({
+      name: 'moody test',
+      type: SubscriptionType.transaction,
+      description: 'abc',
+      webhookUrl: 'https://google.com',
+      filters: {
+        methodSignature: '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
+      }
+    });
   });
 
   it('works with valid transaction filter requests', () => {
@@ -173,6 +203,37 @@ describe('JoiCreateSubscriptionRequest#validate', () => {
       filters: {
         from: [ '0x06012c8cf97bead5deae237070f9587f8e7a266d', '0xed3ece085efe6687a32075531b6b0a45f99eccdf' ],
         to: [ '0x06012c8cf97bead5deae237070f9587f8e7a266d', '0xed3ece085efe6687a32075531b6b0a45f99eccdf' ]
+      }
+    });
+
+    v({
+      name: 'moody test',
+      type: SubscriptionType.transaction,
+      description: 'abc',
+      webhookUrl: 'https://google.com',
+      filters: {
+        methodSignature: [ '0x3d7d3f5a' ]
+      }
+    });
+
+    v({
+      name: 'moody test',
+      type: SubscriptionType.transaction,
+      description: 'abc',
+      webhookUrl: 'https://google.com',
+      filters: {
+        from: [ '0x06012c8cf97bead5deae237070f9587f8e7a266d', '0xed3ece085efe6687a32075531b6b0a45f99eccdf' ],
+        methodSignature: [ '0x3d7d3f5a' ]
+      }
+    });
+
+    v({
+      name: 'moody test',
+      type: SubscriptionType.transaction,
+      description: 'abc',
+      webhookUrl: 'https://google.com',
+      filters: {
+        methodSignature: '0x3d7d3f5a'
       }
     });
   });

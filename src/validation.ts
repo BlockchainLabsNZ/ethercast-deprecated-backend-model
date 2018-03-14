@@ -18,6 +18,7 @@ export const JoiWebhookReceipt = Joi.object({
 
 const address = Joi.string().regex(/^0x[0-9a-fA-F]{40}$/).lowercase();
 const topic = Joi.string().regex(/^0x[0-9a-fA-F]{64}$/).lowercase();
+const methodSignature = Joi.string().regex(/^0x[0-9a-fA-F]{8}$/).lowercase();
 
 /**
  * Helper function that gives us a filter option for a particular type
@@ -35,6 +36,7 @@ function filterOption(item: Schema) {
 
 const topicFilter = filterOption(topic);
 const addressFilter = filterOption(address);
+const methodSignatureFilter = filterOption(methodSignature);
 
 export const JoiSubscriptionLogFilter = Joi.object({
   address: addressFilter,
@@ -46,7 +48,8 @@ export const JoiSubscriptionLogFilter = Joi.object({
 
 export const JoiSubscriptionTransactionFilter = Joi.object({
   from: addressFilter,
-  to: addressFilter
+  to: addressFilter,
+  methodSignature: methodSignatureFilter
 });
 
 export const JoiCreateSubscriptionRequest = Joi.object().keys({
