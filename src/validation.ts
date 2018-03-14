@@ -36,7 +36,7 @@ function filterOption(item: Schema) {
 const topicFilter = filterOption(topic);
 const addressFilter = filterOption(address);
 
-export const JoiLogFilter = Joi.object({
+export const JoiSubscriptionLogFilter = Joi.object({
   address: addressFilter,
   topic0: topicFilter,
   topic1: topicFilter,
@@ -44,7 +44,7 @@ export const JoiLogFilter = Joi.object({
   topic3: topicFilter
 });
 
-export const JoiTransactionFilter = Joi.object({
+export const JoiSubscriptionTransactionFilter = Joi.object({
   from: addressFilter,
   to: addressFilter
 });
@@ -61,8 +61,8 @@ export const JoiCreateSubscriptionRequest = Joi.object().keys({
     'type',
     {
       is: SubscriptionType.log,
-      then: JoiLogFilter,
-      otherwise: JoiTransactionFilter
+      then: JoiSubscriptionLogFilter,
+      otherwise: JoiSubscriptionTransactionFilter
     }
   ).required()
 }).unknown(false);
