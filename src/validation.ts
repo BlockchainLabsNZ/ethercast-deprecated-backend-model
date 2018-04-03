@@ -87,8 +87,3 @@ export const JoiCreateApiKeyRequest = Joi.object({
   name: Joi.string().min(1).max(256).required(),
   scopes: Joi.array().items(JoiScope).unique().required().min(1)
 });
-
-export const JoiApiKey = JoiCreateApiKeyRequest.keys({
-  user: Joi.string().required(),
-  secret: Joi.string().hex().length(64).required()
-});
