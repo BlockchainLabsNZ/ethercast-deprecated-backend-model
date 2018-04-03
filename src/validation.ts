@@ -1,7 +1,12 @@
 import * as Joi from 'joi';
 import { Schema } from 'joi';
 import * as urlRegex from 'url-regex';
-import { Scope, SubscriptionStatus, SubscriptionType } from './types';
+import {
+  ApiKeyStatus,
+  Scope,
+  SubscriptionStatus,
+  SubscriptionType
+}from './types';
 
 export const JoiWebhookReceiptResult = Joi.object({
   success: Joi.boolean().required(),
@@ -86,4 +91,11 @@ export const JoiScope = Joi.string().valid(
 export const JoiCreateApiKeyRequest = Joi.object({
   name: Joi.string().min(1).max(256).required(),
   scopes: Joi.array().items(JoiScope).unique().required().min(1)
+});
+
+export const JoiApiKey = JoiCreateApiKeyRequest.keys({
+  id: Joi.string().required(),
+  user: Joi.string().required(),
+  token: Joi.string().required(),
+  status: Joi.string().valid(Object.keys(ApiKeyStatus)).required(),
 });

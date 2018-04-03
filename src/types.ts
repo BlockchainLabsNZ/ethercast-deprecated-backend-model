@@ -89,7 +89,7 @@ export interface CreateApiKeyRequest {
 }
 
 export interface ApiKey extends CreateApiKeyRequest {
-  jit: string;
+  id: string;
   user: string;
   token: string;
   status: ApiKeyStatus;
