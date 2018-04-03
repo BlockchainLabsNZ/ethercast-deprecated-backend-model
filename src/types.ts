@@ -92,6 +92,7 @@ export enum Scope {
   READ_SUBSCRIPTION = 'read:subscription',
   CREATE_SUBSCRIPTION = 'create:subscription',
   DEACTIVATE_SUBSCRIPTION = 'deactivate:subscription',
+  READ_API_KEY = 'read:apiKey',
   CREATE_API_KEY = 'create:apiKey',
   DEACTIVATE_API_KEY = 'deactivate:apiKey'
 }
