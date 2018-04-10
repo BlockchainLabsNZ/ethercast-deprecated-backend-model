@@ -80,7 +80,7 @@ export interface WebhookReceipt {
 
 export interface CreateApiKeyRequest {
   name: string;
-  scopes: Set<Scope>;
+  scopes: Scope[];
 }
 
 export interface ApiKey extends CreateApiKeyRequest {
