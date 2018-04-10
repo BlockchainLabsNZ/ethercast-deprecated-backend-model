@@ -2,7 +2,6 @@ import * as Joi from 'joi';
 import { Schema } from 'joi';
 import * as urlRegex from 'url-regex';
 import {
-  ApiKeyStatus,
   Scope,
   SubscriptionStatus,
   SubscriptionType
@@ -96,6 +95,5 @@ export const JoiCreateApiKeyRequest = Joi.object({
 export const JoiApiKey = JoiCreateApiKeyRequest.keys({
   id: Joi.string().required(),
   user: Joi.string().required(),
-  token: Joi.string().required(),
-  status: Joi.string().valid(Object.keys(ApiKeyStatus)).required(),
+  secret: Joi.string().required(),
 });

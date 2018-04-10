@@ -78,11 +78,6 @@ export interface WebhookReceipt {
   result: WebhookReceiptResult;
 }
 
-export enum ApiKeyStatus {
-  active = 'active',
-  deactivated = 'deactivated'
-}
-
 export interface CreateApiKeyRequest {
   name: string;
   scopes: Set<Scope>;
@@ -91,8 +86,7 @@ export interface CreateApiKeyRequest {
 export interface ApiKey extends CreateApiKeyRequest {
   id: string;
   user: string;
-  token: string;
-  status: ApiKeyStatus;
+  secret: string;
 }
 
 export enum Scope {
