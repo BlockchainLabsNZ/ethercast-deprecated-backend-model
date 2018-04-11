@@ -102,7 +102,7 @@ export interface GetExampleRequest {
   type: SubscriptionType
 }
 
-export interface GetExampleTransactionRequest extends GetExampleRequest {
+  export interface GetExampleTransactionRequest extends GetExampleRequest {
   type: SubscriptionType.transaction,
   filters: TransactionSubscriptionFilters
 }

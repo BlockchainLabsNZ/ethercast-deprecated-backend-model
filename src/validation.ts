@@ -98,7 +98,7 @@ export const JoiApiKey = JoiCreateApiKeyRequest.keys({
   secret: Joi.string().required(),
 });
 
-export const GetExampleRequest = Joi.object({
+export const JoiGetExampleRequest = Joi.object({
   type: Joi.string().valid(Object.keys(SubscriptionType)),
   filters: Joi.object().when(
     'type',
