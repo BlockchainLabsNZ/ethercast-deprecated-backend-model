@@ -97,3 +97,15 @@ export const JoiApiKey = JoiCreateApiKeyRequest.keys({
   user: Joi.string().required(),
   secret: Joi.string().required(),
 });
+
+export const GetExampleRequest = Joi.object({
+  type: Joi.string().valid(Object.keys(SubscriptionType)),
+  filters: Joi.object().when(
+    'type',
+    {
+      is: SubscriptionType.transaction,
+      then: JoiSubscriptionTransactionFilter,
+      otherwise: JoiSubscriptionLogFilter
+    }
+  ).required()
+});
