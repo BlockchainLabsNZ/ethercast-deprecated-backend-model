@@ -98,16 +98,16 @@ export enum Scope {
   DEACTIVATE_API_KEY = 'deactivate:apiKey'
 }
 
-interface GetExampleRequest {
+export interface GetExampleRequest {
   type: SubscriptionType
 }
 
-interface GetExampleTransactionRequest extends GetExampleRequest {
+export interface GetExampleTransactionRequest extends GetExampleRequest {
   type: SubscriptionType.transaction,
   filters: TransactionSubscriptionFilters
 }
 
-interface GetExampleLogRequest extends GetExampleRequest {
+export interface GetExampleLogRequest extends GetExampleRequest {
   type: SubscriptionType.log,
   filters: LogSubscriptionFilters
 }
