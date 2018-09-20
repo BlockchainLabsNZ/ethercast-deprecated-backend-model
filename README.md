@@ -1,3 +1,3 @@
-# backend-model
+# Deprecated
 
-The model for the backend API
+This package is deprecated in favor of [`@ethercast/model`](https://github.com/Ethercast/model)
